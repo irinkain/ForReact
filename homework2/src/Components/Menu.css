@@ -1,0 +1,23 @@
+.header-container{
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+}
+.header{
+    width: 100%;
+}
+.header-container ul{
+    list-style: none;
+    display: flex;
+    
+}
+.header-container ul li{
+    margin-right: 20px;
+    
+}
+.header-container ul li a{
+    color:red;
+    text-decoration: none;
+}
