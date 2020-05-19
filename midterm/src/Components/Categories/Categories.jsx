@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Button } from 'react-bootstrap';
-import Login from '../../Login/Login';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from '../Card/Card';
+
 function Categories() {
   const [data, setData] = useState({});
   const [Isloading, setIsLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://api.chucknorris.io/jokes/categories", {})
+      .get('https://api.chucknorris.io/jokes/categories', {})
       .then((res) => {
         setData(res.data);
         setIsLoading(false);
@@ -21,17 +21,15 @@ function Categories() {
     return <h1>Data is loading</h1>;
   }
   return (
-        <div>
-            {Object.keys(data).map((el) => {
-            return (
-            <Card border="dark" style={{ width: "18rem" }}>
-                <Card.Body>
-                <Card.Title>{data[el]}</Card.Title>
-                <Button variant="primary">See joke </Button>
-                </Card.Body>
-            </Card>);
-    })}
+    <div className="container-wrapper">
+      <div className="container">
+        <div className="card-wrapper-container">
+          {data.map((el) => {
+            return <Card title={el} />;
+          })}
+        </div>
+      </div>
     </div>
-     );
+  );
 }
 export default Categories;
