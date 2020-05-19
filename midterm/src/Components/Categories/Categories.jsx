@@ -27,7 +27,7 @@ function Categories() {
             <Card border="dark" style={{ width: "18rem" }}>
                 <Card.Body>
                 <Card.Title>{data[el]}</Card.Title>
-                <Button variant="primary" onClick={Login}>See joke </Button>
+                <Button variant="primary">See joke </Button>
                 </Card.Body>
             </Card>);
     })}
